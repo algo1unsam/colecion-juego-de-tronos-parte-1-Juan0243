@@ -1,10 +1,13 @@
 object daenerys{
     const property artefactos = #{}
+    const property historial = []
+
+   
     var cantMax = 2
 
     method encontrar(element) {
-        history.agregarArtefactos(element)
-        if ( artefactos.size() < cantMax) { /*&& !artefactos.contains(element)*/ 
+        historial.add(element)
+        if ( artefactos.size() < cantMax) { /*&& !artefactos.contains(element) por si me pide que no se pueda repetir un elemento en una misma lista*/ 
             artefactos.add(element)
         } 
     }
@@ -13,17 +16,18 @@ object daenerys{
 
     method cantMax() = cantMax
 
-    method volverAcasa() {
-        rocaDragon.vaciar()
+    method volverA(lugar) {  //algo más generico
+        lugar.guardar(self.artefactos())
+        artefactos.clear()
     }
 
-    method tieneEncima() = artefactos
+    method tieneEncima() = self.artefactos()
 
-    method posesiones() = rocaDragon.almacen() + artefactos
+    method posesiones() = castillo.almacen() + self.artefactos()
 
-    method posee(element) = self.posesiones().contains(element)
-
-    method historia() = history.artefactosEncontrados()
+    method posee(element) = self.posesiones().contains(element) 
+    
+    method historia() = historial
     
 }
 
@@ -35,19 +39,10 @@ object libro { }
 
 object armadura { }
 
-object rocaDragon {
+object castillo {
     const property almacen = #{}
 
-    method vaciar() {
-    almacen.addAll(daenerys.artefactos())
-    daenerys.artefactos().clear()
-    }
-}
-
-object history {
-    const property artefactosEncontrados = []
-
-    method agregarArtefactos(element) {
-        artefactosEncontrados.add(element)
+    method guardar(elements) {
+    almacen.addAll(elements)
     }
 }

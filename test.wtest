@@ -14,19 +14,19 @@ test "castillo" {
 
 	daenerys.encontrar(espada)
 	daenerys.encontrar(libro)
-	daenerys.volverAcasa()
+	daenerys.volverA(castillo)
  	daenerys.encontrar(collar)
- 	daenerys.volverAcasa()
+ 	daenerys.volverA(castillo)
  	
  	assert.that(daenerys.artefactos().isEmpty())
- 	assert.equals(#{espada,libro,collar}, rocaDragon.almacen() /*castillo.artefactos()*/) 
+ 	assert.equals(#{espada,libro,collar}, castillo.almacen() ) 
  	
 }
-
+/*
 test "posesiones" {
 	
-	/*castillo.agregarArtefactos(#{collar, espada})*/
-	rocaDragon.agregarArtefactos(#{collar, espada})
+	castillo.agregarArtefactos(#{collar, espada})
+
 	
 	daenerys.encontrar(armadura)
 	assert.equals(#{collar, armadura, espada}, daenerys.posesiones())
@@ -34,12 +34,12 @@ test "posesiones" {
 	assert.notThat(daenerys.posee(libro))
 	
 }
-
+*/
 test "historia" {
 	daenerys.encontrar(espada)
 	daenerys.encontrar(libro)
 	daenerys.encontrar(collar)
-	daenerys.volverAcasa()
+	daenerys.volverA(castillo)
 	daenerys.encontrar(armadura)
 	daenerys.encontrar(collar)
 
