@@ -3,7 +3,8 @@ object daenerys{
     var cantMax = 2
 
     method encontrar(element) {
-        if ( artefactos.size() < cantMax) /*&& !artefactos.contains(element)*/ {
+        history.agregarArtefactos(element)
+        if ( artefactos.size() < cantMax) { /*&& !artefactos.contains(element)*/ 
             artefactos.add(element)
         } 
     }
@@ -12,8 +13,8 @@ object daenerys{
 
     method cantMax() = cantMax
 
-    method volverACasa() {
-      rocaDragon.vaciar()
+    method volverAcasa() {
+        rocaDragon.vaciar()
     }
 
     method tieneEncima() = artefactos
@@ -21,6 +22,9 @@ object daenerys{
     method posesiones() = rocaDragon.almacen() + artefactos
 
     method posee(element) = self.posesiones().contains(element)
+
+    method historia() = history.artefactosEncontrados()
+    
 }
 
 object collar { }
@@ -40,6 +44,10 @@ object rocaDragon {
     }
 }
 
-object historia {
-  
+object history {
+    const property artefactosEncontrados = []
+
+    method agregarArtefactos(element) {
+        artefactosEncontrados.add(element)
+    }
 }
