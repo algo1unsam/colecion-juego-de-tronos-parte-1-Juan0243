@@ -12,32 +12,24 @@ object daenerys{
 
     method cantMax() = cantMax
 
-    method guardar() {
+    method volverACasa() {
       rocaDragon.vaciar()
-
-
-
-      
     }
 
     method tieneEncima() = artefactos
 
-    method tiene() = rocaDragon.almacen() + artefactos
+    method posesiones() = rocaDragon.almacen() + artefactos
 
-    method posee(element) = artefactos.contains(element)  or rocaDragon.almacen.contains(element)
+    method posee(element) = self.posesiones().contains(element)
 }
 
-object collar {
-}
+object collar { }
 
-object espada {
-}
+object espada { }
 
-object libro {
-}
+object libro { }
 
-object armadura {
-}
+object armadura { }
 
 object rocaDragon {
     const property almacen = #{}
@@ -46,4 +38,8 @@ object rocaDragon {
     almacen.addAll(daenerys.artefactos())
     daenerys.artefactos().clear()
     }
+}
+
+object historia {
+  
 }

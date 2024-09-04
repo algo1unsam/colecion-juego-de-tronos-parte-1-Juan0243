@@ -63,6 +63,3 @@ Si consultamos la historia de encuentros con los artefactos, debería ser:
 3. Collar de Fuego  
 4. Armadura de Acero Valyrio  
 5. Collar de Fuego (¡de nuevo!)
-
-
-
