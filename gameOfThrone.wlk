@@ -14,6 +14,10 @@ object daenerys{
 
     method guardar() {
       rocaDragon.vaciar()
+
+
+
+      
     }
 
     method tieneEncima() = artefactos
